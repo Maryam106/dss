@@ -498,11 +498,12 @@
 
 <!-- ══ Sidebar ══ -->
 
-<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open');document.getElementById('soverlay').classList.toggle('open')" aria-label="Menu">
+
+
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
 </button>
-<div class="sidebar-overlay" id="soverlay" onclick="document.querySelector('.sidebar').classList.toggle('open');this.classList.toggle('open')"></div>
-
+<div class="sidebar-overlay" id="soverlay" onclick="toggleSidebar()"></div>
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-row">
@@ -912,5 +913,13 @@ function updateScore(slider) {
 }
 </script>
 
+<script>
+function toggleSidebar(){
+    var s = document.querySelector('.sidebar');
+    var o = document.getElementById('soverlay');
+    s.classList.toggle('open');
+    o.classList.toggle('open');
+}
+</script>
 </body>
 </html>
