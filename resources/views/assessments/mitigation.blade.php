@@ -474,7 +474,7 @@
                     </div>
 
                     <div class="risk-table-wrap" style="margin-bottom:28px;">
-                        <table>
+                        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;"><table>
                             <thead>
                                 <tr>
                                     <th style="width:44px;">#</th>
@@ -510,7 +510,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table></div>
                     </div>
 
                     <!-- Mitigation cards -->

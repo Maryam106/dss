@@ -220,7 +220,7 @@
             <a href="{{ url('/assessments/create') }}" class="new-btn">＋ New Assessment</a>
         </div>
         @else
-        <table>
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;"><table>
             <thead>
                 <tr>
                     <th>University / Institution</th>
@@ -264,7 +264,7 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table></div>
         @endif
     </div>
 </div>

@@ -441,7 +441,7 @@
                 </div>
                 <div style="font-size:11px;color:var(--muted);">Ranked by Risk Score (highest first) · NIST SP 800-30 Rev.1</div>
             </div>
-            <table class="risk-table">
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;"><table class="risk-table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -500,7 +500,7 @@
                     </tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table></div>
         </div>
 
         <!-- Mitigation Summary -->
