@@ -110,7 +110,7 @@
         .logout-btn:hover { color:#f87171; border-color:rgba(248,113,113,0.3); }
 
         /* ══ Main ══ */
-        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; overflow:hidden; }
+        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
 
         /* ══ Breadcrumb ══ */
         .breadcrumb {
@@ -310,7 +310,7 @@
             gap: 10px;
         }
 
-        .threat-checkbox-card { overflow:hidden;
+        .threat-checkbox-card {
             display: flex;
             align-items: flex-start;
             gap: 12px;
