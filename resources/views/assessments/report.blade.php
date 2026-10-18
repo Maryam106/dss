@@ -206,7 +206,7 @@
 <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
 </button>
-<div class="sidebar-overlay" id="soverlay" onclick="toggleSidebar()"></div>
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-row">
