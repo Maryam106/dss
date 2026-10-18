@@ -56,7 +56,7 @@
         .logout-btn:hover { color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.25); }
 
         /* ══ Main ══ */
-        .main { margin-left:240px; flex:1; display:flex; flex-direction:column; min-height:100vh; }
+        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
         .topbar { background:var(--white); border-bottom:1px solid var(--border); padding:16px 32px; display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); }
         .topbar a { color:var(--blue); text-decoration:none; font-weight:500; }
         .topbar a:hover { text-decoration:underline; }

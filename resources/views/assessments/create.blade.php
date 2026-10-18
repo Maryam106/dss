@@ -110,7 +110,7 @@
         .logout-btn:hover { color:#f87171; border-color:rgba(248,113,113,0.3); }
 
         /* ══ Main ══ */
-        .main { margin-left:240px; flex:1; padding:36px 40px 60px; max-width:calc(100vw - 240px); }
+        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
 
         /* ══ Breadcrumb ══ */
         .breadcrumb {
@@ -443,8 +443,6 @@
 
         @media (max-width:1100px) { .form-layout { grid-template-columns:1fr; } }
         @media (max-width:900px) {
-            
-            .main { margin-left:0; max-width:100%; padding:24px 20px; }
             .form-row, .form-row-3 { grid-template-columns:1fr; }
             .threat-grid { grid-template-columns:1fr; }
         }

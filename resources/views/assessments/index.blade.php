@@ -40,7 +40,7 @@
         .logout-btn:hover { background:rgba(255,255,255,0.1); color:#fff; }
 
         /* Main */
-        .main { margin-left:240px; flex:1; padding:32px; min-height:100vh; }
+        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
 
         /* Header */
         .page-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
