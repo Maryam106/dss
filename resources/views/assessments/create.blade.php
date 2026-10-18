@@ -110,7 +110,7 @@
         .logout-btn:hover { color:#f87171; border-color:rgba(248,113,113,0.3); }
 
         /* ══ Main ══ */
-        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
+        .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; overflow:hidden; }
 
         /* ══ Breadcrumb ══ */
         .breadcrumb {
@@ -310,7 +310,7 @@
             gap: 10px;
         }
 
-        .threat-checkbox-card {
+        .threat-checkbox-card { overflow:hidden;
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -330,7 +330,7 @@
 
         .threat-checkbox-card input[type="checkbox"] { margin-top:2px; flex-shrink:0; accent-color:var(--blue); }
 
-        .threat-card-body { flex:1; min-width:0; }
+        .threat-card-body { flex:1; min-width:0; overflow:hidden; word-break:break-word; }
 
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; }
