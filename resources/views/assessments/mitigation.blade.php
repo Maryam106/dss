@@ -300,6 +300,21 @@
         }
 
         </style>
+
+    <style>
+    /* ══ Mobile override (injected) ══ */
+    @media (max-width: 768px) {
+        html, body { overflow-x: hidden !important; }
+        .main { margin-left: 0 !important; width: 100vw !important; max-width: 100vw !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; }
+        .sidebar { transform: translateX(-100%) !important; transition: transform 0.25s ease !important; }
+        .sidebar.open { transform: translateX(0) !important; }
+        .risk-table-wrap, .table-wrap, [class*="table-wrap"] { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+        table { min-width: 500px !important; }
+        .layout { grid-template-columns: 1fr !important; }
+        .stepper-wrap, [class*="stepper"] { overflow-x: auto !important; }
+    }
+    </style>
+
 </head>
 <body>
 
