@@ -457,11 +457,12 @@
         .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
         .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
         @media (max-width: 768px) {
+            body, html { overflow-x: hidden !important; max-width: 100vw !important; }
             .menu-toggle { display: flex; }
             .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; z-index: 99; }
             .sidebar.open { transform: translateX(0); }
             .sidebar-overlay.open { display: block; }
-            .main { margin-left: 0 !important; padding: 20px 16px; padding-top: 64px; }
+            .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; overflow-x: hidden !important; }
             .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .page-title { font-size: 18px; }
             table { display: block; overflow-x: auto; white-space: nowrap; }
