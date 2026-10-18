@@ -448,10 +448,38 @@
             .form-row, .form-row-3 { grid-template-columns:1fr; }
             .threat-grid { grid-template-columns:1fr; }
         }
-    </style>
+    
+        /* Mobile responsive */
+        .menu-toggle {
+            display: none; position: fixed; top: 14px; left: 14px; z-index: 200;
+            width: 38px; height: 38px; border-radius: 9px;
+            background: var(--navy); border: none; cursor: pointer;
+            align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+        }
+        .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; z-index: 99; }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-overlay.open { display: block; }
+            .main { margin-left: 0 !important; padding: 20px 16px; padding-top: 64px; }
+            .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .page-title { font-size: 18px; }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+            .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
+        }
+
+        </style>
 </head>
 <body>
 s
+
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open');document.getElementById('soverlay').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="soverlay" onclick="document.querySelector('.sidebar').classList.toggle('open');this.classList.toggle('open')"></div>
+
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-row">
