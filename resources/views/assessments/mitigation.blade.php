@@ -92,7 +92,7 @@
         .section-head h2 { font-size:15px; font-weight:700; color:var(--text); }
         .section-head p  { font-size:12px; color:var(--muted); margin-top:2px; }
 
-        .risk-table-wrap { background:var(--white); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:28px; }
+        .risk-table-wrap { background:var(--white); border:1px solid var(--border); border-radius:12px; overflow:visible; margin-bottom:28px; }
 
         table { width:100%; border-collapse:collapse; }
         thead tr { background:var(--surface); }
