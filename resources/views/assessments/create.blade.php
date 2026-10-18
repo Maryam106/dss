@@ -469,6 +469,34 @@
             .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
         }
 
+        
+        /* ══ Extra mobile fixes ══ */
+        @media (max-width: 768px) {
+            * { box-sizing: border-box !important; }
+            .stepper, .module-stepper, [class*="stepper"] {
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+            }
+            .layout { grid-template-columns: 1fr !important; }
+            .mit-card-body { grid-template-columns: 1fr !important; }
+            .info-card, .risk-table-wrap, .card, .mit-card {
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            .nav-btn-row, [class*="btn-row"], [class*="nav-btn"] {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .nav-btn-row a, .nav-btn-row button {
+                width: 100% !important;
+                text-align: center !important;
+            }
+            input, select, textarea {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+
         </style>
 </head>
 <body>
