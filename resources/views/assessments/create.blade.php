@@ -443,7 +443,7 @@
 
         @media (max-width:1100px) { .form-layout { grid-template-columns:1fr; } }
         @media (max-width:900px) {
-            .sidebar { display:none; }
+            
             .main { margin-left:0; max-width:100%; padding:24px 20px; }
             .form-row, .form-row-3 { grid-template-columns:1fr; }
             .threat-grid { grid-template-columns:1fr; }

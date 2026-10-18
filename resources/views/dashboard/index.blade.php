@@ -430,7 +430,7 @@
         .std-role { font-size: 11px; color: rgba(255,255,255,0.35); }
 
         @media (max-width: 1000px) {
-            .sidebar { display: none; }
+            
             .main { margin-left: 0; max-width: 100%; padding: 24px 20px; }
             .stats-row { grid-template-columns: 1fr 1fr; }
             .two-col { grid-template-columns: 1fr; }

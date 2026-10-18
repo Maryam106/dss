@@ -247,7 +247,7 @@
         .empty-state h3 { font-size:15px; font-weight:700; color:var(--text-2); margin-bottom:6px; }
 
         @media (max-width:1000px) { .layout { grid-template-columns:1fr; } .mit-card-body { grid-template-columns:1fr; } }
-        @media (max-width:900px)  { .main { margin-left:0; } .sidebar { display:none; } .content { padding:20px 16px 40px; } }
+        @media (max-width:900px)  { .main { margin-left:0; }  .content { padding:20px 16px 40px; } }
     
         /* Mobile responsive */
         .menu-toggle {

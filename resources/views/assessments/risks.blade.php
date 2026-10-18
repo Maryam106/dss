@@ -467,7 +467,7 @@
         @media (max-width: 900px) {
             .layout { grid-template-columns: 1fr; }
             .main { margin-left: 0; }
-            .sidebar { display: none; }
+            
             .content { padding: 20px 16px 40px; }
         }
     
