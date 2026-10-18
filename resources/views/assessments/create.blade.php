@@ -513,6 +513,22 @@
     }
     </style>
 
+
+    <style>
+    /* ══ Final mobile fixes ══ */
+    @media (max-width: 768px) {
+        .threat-grid { grid-template-columns: 1fr !important; }
+        .submit-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+        .submit-row a, .submit-row button, .btn-back, .btn-primary { width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
+        .stepper, [class*="stepper"], .modules-stepper { overflow-x: auto !important; white-space: nowrap !important; }
+        .step-item { display: inline-flex !important; white-space: normal !important; min-width: 90px !important; }
+        .mit-card-body, .layout { grid-template-columns: 1fr !important; }
+        .info-card { display: none !important; }
+        .risk-table-wrap { overflow-x: auto !important; border-radius: 8px !important; }
+        .risk-table-wrap table { min-width: 480px !important; }
+    }
+    </style>
+
 </head>
 <body>
 s
