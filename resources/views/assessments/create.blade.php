@@ -228,7 +228,7 @@
             white-space: normal;
             word-break: break-word;
             writing-mode: horizontal-tb;
-            display: block;
+            width: 100%;
         }
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; white-space:normal; word-break:break-word; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; white-space:normal; word-break:break-word; }
@@ -383,7 +383,7 @@
                 white-space: normal !important;
                 word-break: break-word !important;
                 writing-mode: horizontal-tb !important;
-                display: block !important;
+                width: 100% !important;
             }
 
             .threat-name, .threat-desc {
