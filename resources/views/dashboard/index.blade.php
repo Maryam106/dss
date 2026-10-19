@@ -458,8 +458,7 @@
 
     @media (max-width: 768px) {
         /* Prevent horizontal page scroll without blocking children */
-        html, body { overflow-x: clip !important; max-width: 100vw; }
-
+        html, body { overflow-x: clip !important; }
         /* Hamburger button */
         .menu-toggle { display: flex !important; }
         .sidebar-overlay.open { display: block !important; }
