@@ -481,7 +481,6 @@
             .mit-card-body { grid-template-columns: 1fr !important; }
             .info-card, .risk-table-wrap, .card, .mit-card {
                 max-width: 100% !important;
-                overflow: hidden !important;
             }
             .nav-btn-row, [class*="btn-row"], [class*="nav-btn"] {
                 flex-direction: column !important;
@@ -498,36 +497,26 @@
         }
 
         </style>
-
     <style>
-    /* ══ Mobile override (injected) ══ */
+    /* ══ Clean mobile fix ══ */
     @media (max-width: 768px) {
         html, body { overflow-x: hidden !important; }
-        .main { margin-left: 0 !important; width: 100vw !important; max-width: 100vw !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; }
-        .sidebar { transform: translateX(-100%) !important; transition: transform 0.25s ease !important; }
+        .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important;
+                padding: 16px !important; padding-top: 64px !important;
+                box-sizing: border-box !important; overflow-x: hidden !important; }
+        .sidebar { transform: translateX(-100%) !important; transition: transform 0.25s ease !important; z-index: 99 !important; }
         .sidebar.open { transform: translateX(0) !important; }
-        .risk-table-wrap, .table-wrap, [class*="table-wrap"] { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
-        table { min-width: 500px !important; }
-        .layout { grid-template-columns: 1fr !important; }
-        .stepper-wrap, [class*="stepper"] { overflow-x: auto !important; }
-    }
-    </style>
-
-
-    <style>
-    /* ══ Final mobile fixes ══ */
-    @media (max-width: 768px) {
-        .step-progress { overflow-x: auto !important; white-space: nowrap !important; padding: 16px !important; }
-        .step-item { flex-shrink: 0 !important; min-width: 120px !important; }
         .threat-grid { grid-template-columns: 1fr !important; }
-        .submit-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
-        .submit-row a, .submit-row button, .btn-back, .btn-primary { width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
-        .stepper, [class*="stepper"], .modules-stepper { overflow-x: auto !important; white-space: nowrap !important; }
-
-        .mit-card-body, .layout { grid-template-columns: 1fr !important; }
+        .step-progress { overflow-x: auto !important; padding: 16px !important; }
+        .step-item { flex-shrink: 0 !important; }
+        .risk-table-wrap, .table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+        .risk-table-wrap table, .table-wrap table { min-width: 480px !important; white-space: nowrap !important; }
+        .form-layout { grid-template-columns: 1fr !important; }
+        .layout { grid-template-columns: 1fr !important; }
+        .mit-card-body { grid-template-columns: 1fr !important; }
+        .form-actions { flex-direction: column !important; gap: 10px !important; }
+        .btn-back, .btn-next, .btn-submit { width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
         .info-card { display: none !important; }
-        .risk-table-wrap { overflow-x: auto !important; border-radius: 8px !important; }
-        .risk-table-wrap table { min-width: 480px !important; }
     }
     </style>
 
