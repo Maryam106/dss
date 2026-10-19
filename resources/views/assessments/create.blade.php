@@ -447,85 +447,44 @@
             .threat-grid { grid-template-columns:1fr; }
         }
     
-        /* Mobile responsive */
-        .menu-toggle {
-            display: none; position: fixed; top: 14px; left: 14px; z-index: 200;
-            width: 38px; height: 38px; border-radius: 9px;
-            background: var(--navy); border: none; cursor: pointer;
-            align-items: center; justify-content: center; flex-direction: column; gap: 5px;
-        }
-        .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
-        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
-        @media (max-width: 768px) {
-            html, body { overflow-x: clip !important; }
-            .menu-toggle { display: flex; }
-            .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; z-index: 99; }
-            .sidebar.open { transform: translateX(0); }
-            .sidebar-overlay.open { display: block; }
-            .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; }
-            .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-            .page-title { font-size: 18px; }
-            /* table scroll handled in mobile block below */
-            .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
-        }
+        
 
         
-        /* ══ Extra mobile fixes ══ */
-        @media (max-width: 768px) {
-            * { box-sizing: border-box !important; }
-            .stepper, .module-stepper, [class*="stepper"] {
-                overflow-x: auto !important;
-                white-space: nowrap !important;
-            }
-            .layout { grid-template-columns: 1fr !important; }
-            .mit-card-body { grid-template-columns: 1fr !important; }
-            .info-card, .risk-table-wrap, .card, .mit-card {
-                max-width: 100% !important;
-            }
-            .nav-btn-row, [class*="btn-row"], [class*="nav-btn"] {
-                flex-direction: column !important;
-                gap: 10px !important;
-            }
-            .nav-btn-row a, .nav-btn-row button {
-                width: 100% !important;
-                text-align: center !important;
-            }
-            input, select, textarea {
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-        }
+        
 
-        </style>
-    <style>
-    /* ══ Mobile responsive — single clean block ══ */
+        
+    /* ══════════════════════════════════════
+       MOBILE RESPONSIVE — single authority
+       ══════════════════════════════════════ */
     .menu-toggle {
         display: none;
         position: fixed; top: 14px; left: 14px; z-index: 200;
-        width: 38px; height: 38px; border-radius: 9px;
+        width: 40px; height: 40px; border-radius: 9px;
         background: var(--navy); border: none; cursor: pointer;
-        align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+        align-items: center; justify-content: center;
+        flex-direction: column; gap: 5px;
     }
     .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
     .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
 
     @media (max-width: 768px) {
-        html, body { overflow-x: clip !important; }
+        /* Prevent horizontal page scroll without blocking children */
+        html, body { overflow-x: clip !important; max-width: 100vw; }
 
-        /* Hamburger */
+        /* Hamburger button */
         .menu-toggle { display: flex !important; }
         .sidebar-overlay.open { display: block !important; }
 
-        /* Sidebar slides in */
+        /* Sidebar: hidden off-screen, slides in on .open */
         .sidebar {
+            position: fixed !important;
             transform: translateX(-100%) !important;
             transition: transform 0.25s ease !important;
             z-index: 99 !important;
-            position: fixed !important;
         }
         .sidebar.open { transform: translateX(0) !important; }
 
-        /* Main content: full width, padded top for hamburger */
+        /* Main content area: full width, room for hamburger */
         .main {
             margin-left: 0 !important;
             width: 100% !important;
@@ -533,69 +492,86 @@
             padding: 16px !important;
             padding-top: 64px !important;
             box-sizing: border-box !important;
-            overflow-x: visible !important;
+            /* NO overflow-x here — let children scroll */
         }
 
-        /* Page header */
-        .page-header { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
-        .page-title { font-size: 18px !important; }
-
-        /* Step progress bar: scroll horizontally, do NOT use inline-flex */
-        .step-progress {
+        /* Step progress bar: scroll horizontally */
+        .step-progress, .progress-bar {
             overflow-x: auto !important;
+            overflow-y: visible !important;
             -webkit-overflow-scrolling: touch !important;
-            padding: 12px 16px !important;
+            padding: 14px 16px !important;
             flex-wrap: nowrap !important;
+            display: flex !important;
         }
-        .step-item { flex-shrink: 0 !important; min-width: 110px !important; }
-        .step-connector { flex-shrink: 0 !important; }
+        .step-item {
+            flex: 0 0 auto !important;
+            flex-shrink: 0 !important;
+            min-width: 120px !important;
+        }
+        .step-connector, .step-line {
+            flex-shrink: 0 !important;
+            min-width: 24px !important;
+        }
 
-        /* Threat cards grid: single column */
+        /* Threat grid: single column */
         .threat-grid { grid-template-columns: 1fr !important; }
 
-        /* Tables: wrap in scrollable container — apply to table elements */
-        table {
-            display: block !important;
+        /* Threat card text visible */
+        .threat-card-body {
+            overflow: visible !important;
+            word-break: break-word !important;
+        }
+        .threat-checkbox-card { overflow: visible !important; }
+        .form-card { overflow: visible !important; }
+
+        /* Tables: scrollable */
+        .risk-table-wrap, .table-wrap {
             overflow-x: auto !important;
+            overflow-y: visible !important;
             -webkit-overflow-scrolling: touch !important;
-            white-space: nowrap !important;
+            width: 100% !important;
+        }
+        table {
+            display: table !important;
+            min-width: 600px !important;
             width: 100% !important;
         }
 
-        /* Table wrappers */
-        .risk-table-wrap, .table-wrap {
-            overflow-x: auto !important;
-            -webkit-overflow-scrolling: touch !important;
-            max-width: 100% !important;
-        }
-
-        /* Grids collapse to single column */
-        .form-layout, .layout, .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
+        /* Grids collapse */
+        .form-layout { grid-template-columns: 1fr !important; }
         .form-row, .form-row-3 { grid-template-columns: 1fr !important; }
         .mit-card-body { grid-template-columns: 1fr !important; }
+        .layout, .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
+        .summary-card { gap: 16px !important; }
 
         /* Inputs full width */
-        input, select, textarea { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+        input, select, textarea {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
 
-        /* Action buttons stack */
-        .form-actions, .nav-btn-row, [class*="btn-row"], [class*="nav-btn"], .submit-row {
+        /* Buttons stack */
+        .form-actions, .nav-btn-row, .submit-row {
             flex-direction: column !important;
             gap: 10px !important;
             align-items: stretch !important;
         }
-        .btn-back, .btn-next, .btn-submit, .btn-primary,
-        .nav-btn-row a, .nav-btn-row button,
-        .submit-row a, .submit-row button {
+        .btn-back, .btn-next, .btn-submit, .btn-primary {
             width: 100% !important;
             box-sizing: border-box !important;
             text-align: center !important;
             justify-content: center !important;
         }
 
-        /* Hide info sidebar panels on mobile */
+        /* Hide desktop-only side panels */
         .info-card, .info-panel { display: none !important; }
+
+        /* Font size adjustments */
+        .page-title, .page-header h1 { font-size: 18px !important; }
     }
-    </style>
+</style>
 
 </head>
 <body>
