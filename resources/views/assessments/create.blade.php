@@ -529,7 +529,6 @@
         }
         .threat-card-body {
             min-width: 0 !important;
-            width: 0 !important;
             flex: 1 !important;
             overflow: visible !important;
             white-space: normal !important;
