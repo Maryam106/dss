@@ -164,10 +164,9 @@
 
         /* ── Main ── */
         .main {
-            margin-left: 232px;
-            flex: 1;
-            padding: 36px 40px;
-            max-width: calc(100vw - 232px);
+        margin-left: 232px;
+        flex: 1;
+        padding: 36px 40px;
         }
 
         /* ── Topbar ── */
