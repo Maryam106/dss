@@ -319,6 +319,8 @@
             border-radius: 10px;
             cursor: pointer;
             transition: border-color 0.15s, background 0.15s;
+            min-width: 0;
+            overflow: visible;
             user-select: none;
         }
 
@@ -330,7 +332,7 @@
 
         .threat-checkbox-card input[type="checkbox"] { margin-top:2px; flex-shrink:0; accent-color:var(--blue); }
 
-        .threat-card-body { flex:1; min-width:0; word-break:break-word; }
+        .threat-card-body { flex:1; min-width:0; white-space: normal; word-break:break-word; overflow:visible; }
 
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; }
@@ -469,7 +471,7 @@
 
     @media (max-width: 768px) {
         /* Prevent horizontal page scroll without blocking children */
-        html, body { overflow-x: clip !important; max-width: 100vw; }
+        html, body { overflow-x: clip !important; }
 
         /* Hamburger button */
         .menu-toggle { display: flex !important; }
@@ -516,6 +518,28 @@
 
         /* Threat grid: single column */
         .threat-grid { grid-template-columns: 1fr !important; }
+
+        /* Threat cards: force text to wrap, never overflow */
+        .threat-checkbox-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            overflow: visible !important;
+            white-space: normal !important;
+        }
+        .threat-card-body {
+            min-width: 0 !important;
+            width: 0 !important;
+            flex: 1 !important;
+            overflow: visible !important;
+            white-space: normal !important;
+            word-break: break-word !important;
+        }
+        .threat-name, .threat-desc {
+            white-space: normal !important;
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+        }
 
         /* Threat card text visible */
         .threat-card-body {
@@ -1226,7 +1250,7 @@
 <script>
 function toggleSidebar(){
     var s = document.querySelector('.sidebar');
-    var o = document.getElementById('soverlay');
+    var o = document.getElementById('overlay');
     s.classList.toggle('open');
     o.classList.toggle('open');
 }
