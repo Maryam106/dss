@@ -454,7 +454,7 @@
             .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; overflow-x: hidden !important; }
             .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .page-title { font-size: 18px; }
-            table { display: block; overflow-x: auto; white-space: nowrap; }
+            /* table scroll handled in mobile block below */
             .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
         }
 
@@ -470,7 +470,6 @@
             .mit-card-body { grid-template-columns: 1fr !important; }
             .info-card, .risk-table-wrap, .card, .mit-card {
                 max-width: 100% !important;
-                overflow: hidden !important;
             }
             .nav-btn-row, [class*="btn-row"], [class*="nav-btn"] {
                 flex-direction: column !important;
@@ -487,34 +486,103 @@
         }
 
         </style>
-
     <style>
-    /* ══ Mobile override (injected) ══ */
+    /* ══ Mobile responsive — single clean block ══ */
+    .menu-toggle {
+        display: none;
+        position: fixed; top: 14px; left: 14px; z-index: 200;
+        width: 38px; height: 38px; border-radius: 9px;
+        background: var(--navy); border: none; cursor: pointer;
+        align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
+    .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
+
     @media (max-width: 768px) {
         html, body { overflow-x: hidden !important; }
-        .main { margin-left: 0 !important; width: 100vw !important; max-width: 100vw !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; }
-        .sidebar { transform: translateX(-100%) !important; transition: transform 0.25s ease !important; }
+
+        /* Hamburger */
+        .menu-toggle { display: flex !important; }
+        .sidebar-overlay.open { display: block !important; }
+
+        /* Sidebar slides in */
+        .sidebar {
+            transform: translateX(-100%) !important;
+            transition: transform 0.25s ease !important;
+            z-index: 99 !important;
+            position: fixed !important;
+        }
         .sidebar.open { transform: translateX(0) !important; }
-        .risk-table-wrap, .table-wrap, [class*="table-wrap"] { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
-        table { min-width: 500px !important; }
-        .layout { grid-template-columns: 1fr !important; }
-        .stepper-wrap, [class*="stepper"] { overflow-x: auto !important; }
-    }
-    </style>
 
+        /* Main content: full width, padded top for hamburger */
+        .main {
+            margin-left: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 16px !important;
+            padding-top: 64px !important;
+            box-sizing: border-box !important;
+            overflow-x: hidden !important;
+        }
 
-    <style>
-    /* ══ Final mobile fixes ══ */
-    @media (max-width: 768px) {
+        /* Page header */
+        .page-header { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+        .page-title { font-size: 18px !important; }
+
+        /* Step progress bar: scroll horizontally, do NOT use inline-flex */
+        .step-progress {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding: 12px 16px !important;
+            flex-wrap: nowrap !important;
+        }
+        .step-item { flex-shrink: 0 !important; min-width: 110px !important; }
+        .step-connector { flex-shrink: 0 !important; }
+
+        /* Threat cards grid: single column */
         .threat-grid { grid-template-columns: 1fr !important; }
-        .submit-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
-        .submit-row a, .submit-row button, .btn-back, .btn-primary { width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
-        .stepper, [class*="stepper"], .modules-stepper { overflow-x: auto !important; white-space: nowrap !important; }
-        .step-item { display: inline-flex !important; white-space: normal !important; min-width: 90px !important; }
-        .mit-card-body, .layout { grid-template-columns: 1fr !important; }
-        .info-card { display: none !important; }
-        .risk-table-wrap { overflow-x: auto !important; border-radius: 8px !important; }
-        .risk-table-wrap table { min-width: 480px !important; }
+
+        /* Tables: wrap in scrollable container — apply to table elements */
+        table {
+            display: block !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            white-space: nowrap !important;
+            width: 100% !important;
+        }
+
+        /* Table wrappers */
+        .risk-table-wrap, .table-wrap {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            max-width: 100% !important;
+        }
+
+        /* Grids collapse to single column */
+        .form-layout, .layout, .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
+        .form-row, .form-row-3 { grid-template-columns: 1fr !important; }
+        .mit-card-body { grid-template-columns: 1fr !important; }
+
+        /* Inputs full width */
+        input, select, textarea { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+
+        /* Action buttons stack */
+        .form-actions, .nav-btn-row, [class*="btn-row"], [class*="nav-btn"], .submit-row {
+            flex-direction: column !important;
+            gap: 10px !important;
+            align-items: stretch !important;
+        }
+        .btn-back, .btn-next, .btn-submit, .btn-primary,
+        .nav-btn-row a, .nav-btn-row button,
+        .submit-row a, .submit-row button {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            text-align: center !important;
+            justify-content: center !important;
+        }
+
+        /* Hide info sidebar panels on mobile */
+        .info-card, .info-panel { display: none !important; }
     }
     </style>
 
