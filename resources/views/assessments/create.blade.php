@@ -222,7 +222,7 @@
 
         /* CRITICAL: card body must flex:1 with min-width:0 — NO width:0 */
         .threat-card-body {
-            flex: 1;
+            flex: 1 1 auto;
             min-width: 0;
             overflow: visible;
             white-space: normal;
@@ -376,7 +376,7 @@
 
             /* Threat body: fills available space, wraps text */
             .threat-card-body {
-                flex: 1 !important;
+                flex: 1 1 auto !important;
                 min-width: 0 !important;
                 /* NO width:0 — that would collapse the text */
                 overflow: visible !important;
