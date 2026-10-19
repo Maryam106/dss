@@ -201,6 +201,7 @@
         /* ── Threat card ── */
         .threat-checkbox-card {
             display:flex;
+            flex-direction:row;
             align-items:flex-start;
             gap:12px;
             padding:14px;
@@ -210,7 +211,9 @@
             transition:border-color 0.15s,background 0.15s;
             overflow:visible;
             user-select:none;
-            /* CRITICAL: no width/min-width that can collapse the card */
+            writing-mode:horizontal-tb;
+            width:100%;
+            box-sizing:border-box;
         }
         .threat-checkbox-card:has(input:checked),.threat-checkbox-card.selected {
             border-color:var(--blue-soft); background:rgba(219,234,254,0.4);
@@ -224,6 +227,8 @@
             overflow: visible;
             white-space: normal;
             word-break: break-word;
+            writing-mode: horizontal-tb;
+            display: block;
         }
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; white-space:normal; word-break:break-word; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; white-space:normal; word-break:break-word; }
@@ -364,6 +369,9 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 overflow: visible !important;
+                flex-direction: row !important;
+                writing-mode: horizontal-tb !important;
+                box-sizing: border-box !important;
             }
 
             /* Threat body: fills available space, wraps text */
@@ -374,6 +382,8 @@
                 overflow: visible !important;
                 white-space: normal !important;
                 word-break: break-word !important;
+                writing-mode: horizontal-tb !important;
+                display: block !important;
             }
 
             .threat-name, .threat-desc {
