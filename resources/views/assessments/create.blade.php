@@ -330,7 +330,7 @@
 
         .threat-checkbox-card input[type="checkbox"] { margin-top:2px; flex-shrink:0; accent-color:var(--blue); }
 
-        .threat-card-body { flex:1; min-width:0; overflow:hidden; word-break:break-word; }
+        .threat-card-body { flex:1; min-width:0; word-break:break-word; }
 
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; }
@@ -517,11 +517,13 @@
     <style>
     /* ══ Final mobile fixes ══ */
     @media (max-width: 768px) {
+        .step-progress { overflow-x: auto !important; white-space: nowrap !important; padding: 16px !important; }
+        .step-item { flex-shrink: 0 !important; min-width: 120px !important; }
         .threat-grid { grid-template-columns: 1fr !important; }
         .submit-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
         .submit-row a, .submit-row button, .btn-back, .btn-primary { width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
         .stepper, [class*="stepper"], .modules-stepper { overflow-x: auto !important; white-space: nowrap !important; }
-        .step-item { display: inline-flex !important; white-space: normal !important; min-width: 90px !important; }
+
         .mit-card-body, .layout { grid-template-columns: 1fr !important; }
         .info-card { display: none !important; }
         .risk-table-wrap { overflow-x: auto !important; border-radius: 8px !important; }
@@ -531,7 +533,7 @@
 
 </head>
 <body>
-s
+
 
 
 
