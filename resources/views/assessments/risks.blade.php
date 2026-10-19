@@ -481,12 +481,12 @@
         .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
         .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
         @media (max-width: 768px) {
-            body, html { overflow-x: hidden !important; max-width: 100vw !important; }
+            html, body { overflow-x: clip !important; }
             .menu-toggle { display: flex; }
             .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; z-index: 99; }
             .sidebar.open { transform: translateX(0); }
             .sidebar-overlay.open { display: block; }
-            .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; overflow-x: hidden !important; }
+            .main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; padding: 16px !important; padding-top: 64px !important; box-sizing: border-box !important; }
             .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .page-title { font-size: 18px; }
             /* table scroll handled in mobile block below */
@@ -534,7 +534,7 @@
     .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
 
     @media (max-width: 768px) {
-        html, body { overflow-x: hidden !important; }
+        html, body { overflow-x: clip !important; }
 
         /* Hamburger */
         .menu-toggle { display: flex !important; }
@@ -557,7 +557,7 @@
             padding: 16px !important;
             padding-top: 64px !important;
             box-sizing: border-box !important;
-            overflow-x: hidden !important;
+            overflow-x: visible !important;
         }
 
         /* Page header */
