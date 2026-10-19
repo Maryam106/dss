@@ -11,7 +11,6 @@
 
         :root {
             --navy:       #0b1d3a;
-            --navy-mid:   #112753;
             --blue:       #1d4ed8;
             --blue-soft:  #3b82f6;
             --blue-pale:  #dbeafe;
@@ -22,7 +21,6 @@
             --red:        #dc2626;
             --red-pale:   #fee2e2;
             --green:      #059669;
-            --green-pale: #d1fae5;
             --white:      #ffffff;
             --surface:    #f1f5f9;
             --border:     #e2e8f0;
@@ -39,7 +37,7 @@
             display: flex;
         }
 
-        /* ══ Sidebar ══ */
+        /* ── Sidebar ── */
         .sidebar {
             width: 240px;
             background: var(--navy);
@@ -50,32 +48,17 @@
             position: fixed;
             top: 0; left: 0; bottom: 0;
         }
-
-        .sidebar-logo {
-            padding: 22px 20px 18px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-
+        .sidebar-logo { padding: 22px 20px 18px; border-bottom: 1px solid rgba(255,255,255,0.07); }
         .logo-row { display:flex; align-items:center; gap:11px; }
-
         .logo-icon {
-            width: 36px; height: 36px;
-            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
-            border-radius: 9px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 17px; flex-shrink: 0;
+            width:36px; height:36px;
+            background: linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);
+            border-radius:9px; display:flex; align-items:center; justify-content:center;
+            font-size:17px; flex-shrink:0;
         }
-
         .logo-name { font-size:14px; font-weight:700; color:#fff; }
         .logo-sub  { font-size:10px; color:rgba(255,255,255,0.38); margin-top:2px; }
-
         .sidebar-nav { flex:1; padding:14px 10px; display:flex; flex-direction:column; gap:1px; }
-
-        .nav-label {
-            font-size:10px; font-weight:600; color:rgba(255,255,255,0.28);
-            letter-spacing:0.08em; text-transform:uppercase; padding:14px 10px 6px;
-        }
-
         .nav-item {
             display:flex; align-items:center; gap:9px;
             padding:9px 10px; border-radius:7px;
@@ -85,21 +68,17 @@
         .nav-item:hover { background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.88); }
         .nav-item.active { background:rgba(59,130,246,0.16); color:#93c5fd; }
         .nav-icon { font-size:14px; width:18px; text-align:center; flex-shrink:0; }
-
         .sidebar-footer { padding:14px 10px; border-top:1px solid rgba(255,255,255,0.07); }
         .user-row { display:flex; align-items:center; gap:9px; padding:8px 10px; }
-
         .user-avatar {
             width:32px; height:32px;
             background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);
             border-radius:50%; display:flex; align-items:center; justify-content:center;
             font-size:13px; font-weight:700; color:#fff; flex-shrink:0;
         }
-
         .user-info { flex:1; min-width:0; }
         .user-name { font-size:12.5px; font-weight:600; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
         .user-role { font-size:10px; color:rgba(255,255,255,0.35); margin-top:1px; }
-
         .logout-btn {
             display:block; width:100%; margin-top:8px; padding:7px;
             background:transparent; color:rgba(255,255,255,0.35);
@@ -109,136 +88,77 @@
         }
         .logout-btn:hover { color:#f87171; border-color:rgba(248,113,113,0.3); }
 
-        /* ══ Main ══ */
+        /* ── Main ── */
         .main { margin-left:240px; flex:1; padding:36px 40px 60px; min-width:0; box-sizing:border-box; }
 
-        /* ══ Breadcrumb ══ */
-        .breadcrumb {
-            display:flex; align-items:center; gap:8px;
-            font-size:13px; color:var(--muted); margin-bottom:24px;
-        }
+        /* ── Breadcrumb ── */
+        .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin-bottom:24px; }
         .breadcrumb a { color:var(--blue-soft); text-decoration:none; }
         .breadcrumb a:hover { text-decoration:underline; }
-        .breadcrumb-sep { color:var(--border); }
 
-        /* ══ Page header ══ */
+        /* ── Page header ── */
         .page-header { margin-bottom:28px; }
         .page-title { font-size:22px; font-weight:800; letter-spacing:-0.02em; color:var(--text); margin-bottom:6px; }
         .page-subtitle { font-size:13.5px; color:var(--muted); line-height:1.5; }
 
-        /* ══ Step progress bar ══ */
+        /* ── Step progress bar ── */
         .step-progress {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin-bottom: 32px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 28px;
+            display:flex; align-items:center;
+            margin-bottom:32px;
+            background:var(--white);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:20px 28px;
+            overflow-x:auto;
+            -webkit-overflow-scrolling:touch;
         }
-
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-        }
-
+        .step-item { display:flex; align-items:center; gap:10px; flex:1; min-width:130px; flex-shrink:0; }
         .step-circle {
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; font-weight: 700;
-            flex-shrink: 0;
-            transition: all 0.2s;
+            width:32px; height:32px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:13px; font-weight:700; flex-shrink:0;
         }
-
-        .step-circle.done    { background:var(--blue); color:#fff; }
-        .step-circle.active  { background:var(--blue); color:#fff; box-shadow:0 0 0 4px var(--blue-pale); }
-        .step-circle.pending { background:var(--surface); color:var(--muted); border:2px solid var(--border); }
-
+        .step-circle.done   { background:var(--blue); color:#fff; }
+        .step-circle.active { background:var(--blue); color:#fff; box-shadow:0 0 0 4px var(--blue-pale); }
+        .step-circle.pending{ background:var(--surface); color:var(--muted); border:2px solid var(--border); }
         .step-label-wrap { display:flex; flex-direction:column; }
         .step-module { font-size:10px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
         .step-name   { font-size:13px; font-weight:600; color:var(--text); }
         .step-name.pending { color:var(--muted); }
-
-        .step-connector {
-            flex-shrink: 0;
-            width: 32px; height: 2px;
-            background: var(--border);
-            margin: 0 8px;
-        }
+        .step-connector { flex-shrink:0; width:32px; height:2px; background:var(--border); margin:0 8px; }
         .step-connector.done { background:var(--blue); }
 
-        /* ══ Two-column layout ══ */
+        /* ── Two-column layout ── */
         .form-layout { display:grid; grid-template-columns:1fr 300px; gap:24px; }
 
-        /* ══ Form card ══ */
-        .form-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: visible;
-        }
-
+        /* ── Form card ── */
+        .form-card { background:var(--white); border:1px solid var(--border); border-radius:14px; overflow:visible; }
         .form-card-head {
-            padding: 22px 28px;
-            border-bottom: 1px solid var(--border);
-            background: var(--surface);
-            display: flex;
-            align-items: center;
-            gap: 14px;
+            padding:22px 28px; border-bottom:1px solid var(--border);
+            background:var(--surface); display:flex; align-items:center; gap:14px;
+            border-radius:14px 14px 0 0;
         }
-
-        .form-head-icon {
-            width: 42px; height: 42px;
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
-            background: var(--blue-pale);
-        }
-
+        .form-head-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; background:var(--blue-pale); }
         .form-head-title { font-size:15px; font-weight:700; color:var(--text); }
         .form-head-sub   { font-size:12px; color:var(--muted); margin-top:3px; }
-
         .form-body { padding:28px; }
 
-        /* ══ Section divider within form ══ */
-        .form-section {
-            margin-bottom: 28px;
-            padding-bottom: 28px;
-            border-bottom: 1px solid var(--border);
-        }
+        /* ── Sections ── */
+        .form-section { margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid var(--border); }
         .form-section:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
-
         .form-section-title {
-            font-size: 13px; font-weight: 700;
-            color: var(--text-2);
-            margin-bottom: 16px;
-            display: flex; align-items: center; gap: 8px;
+            font-size:13px; font-weight:700; color:var(--text-2);
+            margin-bottom:16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;
         }
+        .form-section-badge { font-size:10px; font-weight:600; padding:2px 8px; border-radius:10px; background:var(--blue-pale); color:var(--blue); }
 
-        .form-section-badge {
-            font-size: 10px; font-weight: 600;
-            padding: 2px 8px; border-radius: 10px;
-            background: var(--blue-pale); color: var(--blue);
-        }
-
-        /* ══ Form groups ══ */
-        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        /* ── Form groups ── */
+        .form-row   { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
         .form-row-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
         .form-group { display:flex; flex-direction:column; gap:6px; }
         .form-group.full { grid-column:1/-1; }
-
-        label {
-            font-size:12.5px; font-weight:600;
-            color:var(--text-2);
-            display:flex; align-items:center; gap:6px;
-        }
-
+        label { font-size:12.5px; font-weight:600; color:var(--text-2); display:flex; align-items:center; gap:6px; }
         .req { color:var(--red); }
-
         .field-hint { font-size:11px; color:var(--muted); margin-top:2px; }
 
         input[type="text"],
@@ -246,183 +166,112 @@
         input[type="email"],
         select,
         textarea {
-            width: 100%;
-            padding: 10px 14px;
-            font-size: 13.5px;
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: var(--white);
-            border: 1.5px solid var(--border);
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.15s, box-shadow 0.15s;
+            width:100%; padding:10px 14px;
+            font-size:13.5px; font-family:'Inter',sans-serif;
+            color:var(--text); background:var(--white);
+            border:1.5px solid var(--border); border-radius:8px;
+            outline:none; transition:border-color 0.15s,box-shadow 0.15s;
         }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--blue-soft);
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+        input:focus,select:focus,textarea:focus {
+            border-color:var(--blue-soft);
+            box-shadow:0 0 0 3px rgba(59,130,246,0.12);
         }
-
         textarea { resize:vertical; min-height:80px; line-height:1.6; }
-
         select { cursor:pointer; }
 
-        /* ══ CIA checkboxes ══ */
+        /* ── CIA checkboxes ── */
         .cia-row { display:flex; gap:12px; flex-wrap:wrap; }
-
         .cia-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1.5px solid var(--border);
-            font-size: 13px; font-weight: 500;
-            color: var(--text-2);
-            cursor: pointer;
-            transition: all 0.15s;
-            user-select: none;
+            display:flex; align-items:center; gap:8px;
+            padding:8px 16px; border-radius:8px;
+            border:1.5px solid var(--border);
+            font-size:13px; font-weight:500; color:var(--text-2);
+            cursor:pointer; transition:all 0.15s; user-select:none;
         }
-
         .cia-btn input { display:none; }
+        .cia-btn:has(input:checked),.cia-btn.checked { border-color:var(--blue-soft); background:var(--blue-pale); color:var(--blue); font-weight:600; }
+        .cia-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+        .cia-c .cia-dot { background:#7c3aed; }
+        .cia-i .cia-dot { background:var(--teal); }
+        .cia-a .cia-dot { background:var(--amber); }
 
-        .cia-btn:has(input:checked),
-        .cia-btn.checked {
-            border-color: var(--blue-soft);
-            background: var(--blue-pale);
-            color: var(--blue);
-            font-weight: 600;
-        }
+        /* ── Threat grid ── */
+        .threat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 
-        .cia-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .cia-c .cia-dot { background: #7c3aed; }
-        .cia-i .cia-dot { background: var(--teal); }
-        .cia-a .cia-dot { background: var(--amber); }
-
-        /* ══ Threat scenario library ══ */
-        .threat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
+        /* ── Threat card ── */
         .threat-checkbox-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 14px;
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: border-color 0.15s, background 0.15s;
-            min-width: 0;
-            overflow: visible;
-            user-select: none;
+            display:flex;
+            align-items:flex-start;
+            gap:12px;
+            padding:14px;
+            border:1.5px solid var(--border);
+            border-radius:10px;
+            cursor:pointer;
+            transition:border-color 0.15s,background 0.15s;
+            overflow:visible;
+            user-select:none;
+            /* CRITICAL: no width/min-width that can collapse the card */
         }
-
-        .threat-checkbox-card:has(input:checked),
-        .threat-checkbox-card.selected {
-            border-color: var(--blue-soft);
-            background: rgba(219,234,254,0.4);
+        .threat-checkbox-card:has(input:checked),.threat-checkbox-card.selected {
+            border-color:var(--blue-soft); background:rgba(219,234,254,0.4);
         }
-
         .threat-checkbox-card input[type="checkbox"] { margin-top:2px; flex-shrink:0; accent-color:var(--blue); }
 
-        .threat-card-body { flex:1; min-width:0; white-space: normal; word-break:break-word; overflow:visible; }
-
-        .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
-        .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-
-        .threat-badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
-
-        .threat-badge {
-            font-size:10px; font-weight:500;
-            padding:2px 8px; border-radius:10px;
+        /* CRITICAL: card body must flex:1 with min-width:0 — NO width:0 */
+        .threat-card-body {
+            flex: 1;
+            min-width: 0;
+            overflow: visible;
+            white-space: normal;
+            word-break: break-word;
         }
-
+        .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; white-space:normal; word-break:break-word; }
+        .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; white-space:normal; word-break:break-word; }
+        .threat-badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+        .threat-badge { font-size:10px; font-weight:500; padding:2px 8px; border-radius:10px; }
         .tb-critical { background:var(--red-pale); color:var(--red); }
         .tb-high     { background:var(--amber-pale); color:var(--amber); }
         .tb-medium   { background:#fef9c3; color:#92400e; }
-
         .tb-c { background:#ede9fe; color:#7c3aed; }
         .tb-i { background:var(--teal-pale); color:var(--teal); }
         .tb-a { background:var(--amber-pale); color:var(--amber); }
 
-        /* ══ Form actions ══ */
+        /* ── Form actions ── */
         .form-actions {
             display:flex; align-items:center; justify-content:space-between;
-            padding:20px 28px;
-            border-top:1px solid var(--border);
-            background:var(--surface);
+            padding:20px 28px; border-top:1px solid var(--border);
+            background:var(--surface); border-radius:0 0 14px 14px;
         }
-
         .btn-back {
             display:inline-flex; align-items:center; gap:7px;
             padding:10px 20px; border-radius:8px;
             font-size:13.5px; font-weight:500;
             color:var(--muted); background:var(--white);
             border:1.5px solid var(--border);
-            text-decoration:none; cursor:pointer;
-            font-family:'Inter',sans-serif;
+            text-decoration:none; cursor:pointer; font-family:'Inter',sans-serif;
             transition:color 0.12s,border-color 0.12s;
         }
         .btn-back:hover { color:var(--text); border-color:var(--text-2); }
-
         .btn-next {
             display:inline-flex; align-items:center; gap:8px;
             padding:10px 24px; border-radius:8px;
             font-size:13.5px; font-weight:700;
             color:#fff; background:var(--blue);
-            border:none; cursor:pointer;
-            font-family:'Inter',sans-serif;
-            transition:background 0.15s,transform 0.1s;
-            text-decoration:none;
+            border:none; cursor:pointer; font-family:'Inter',sans-serif;
+            transition:background 0.15s,transform 0.1s; text-decoration:none;
         }
         .btn-next:hover { background:#1e40af; transform:translateY(-1px); }
 
-        .btn-submit {
-            display:inline-flex; align-items:center; gap:8px;
-            padding:10px 24px; border-radius:8px;
-            font-size:13.5px; font-weight:700;
-            color:#fff; background:var(--teal);
-            border:none; cursor:pointer;
-            font-family:'Inter',sans-serif;
-            transition:background 0.15s;
-        }
-        .btn-submit:hover { background:#0f766e; }
-
-        /* ══ Info panel ══ */
+        /* ── Info panel ── */
         .info-panel { display:flex; flex-direction:column; gap:16px; }
-
-        .info-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px 20px;
-        }
-
-        .info-card-title {
-            font-size: 12px; font-weight: 700;
-            color: var(--muted); text-transform: uppercase;
-            letter-spacing: 0.06em; margin-bottom: 12px;
-        }
-
+        .info-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:18px 20px; }
+        .info-card-title { font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px; }
         .info-item { margin-bottom:12px; }
         .info-item:last-child { margin-bottom:0; }
-
         .info-label { font-size:12px; font-weight:600; color:var(--text-2); margin-bottom:3px; }
         .info-text  { font-size:12px; color:var(--muted); line-height:1.6; }
-
-        .octave-step {
-            display:flex; align-items:flex-start; gap:10px;
-            padding:8px 0; border-bottom:1px solid var(--border);
-        }
+        .octave-step { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid var(--border); }
         .octave-step:last-child { border-bottom:none; }
-
         .octave-num {
             width:22px; height:22px; border-radius:6px;
             background:var(--blue-pale); color:var(--blue);
@@ -430,182 +279,154 @@
             font-size:10px; font-weight:700; flex-shrink:0; margin-top:1px;
         }
         .octave-num.now { background:var(--blue); color:#fff; }
-
         .octave-text { font-size:12px; color:var(--text); font-weight:500; line-height:1.4; }
         .octave-sub  { font-size:11px; color:var(--muted); }
-
         .tip-box {
-            background: var(--blue-pale);
-            border: 1px solid rgba(59,130,246,0.2);
-            border-radius: 8px;
-            padding: 12px 14px;
-            font-size:12px; color:var(--blue);
-            line-height: 1.6;
+            background:var(--blue-pale); border:1px solid rgba(59,130,246,0.2);
+            border-radius:8px; padding:12px 14px;
+            font-size:12px; color:var(--blue); line-height:1.6;
         }
 
+        /* ── Tablet ── */
         @media (max-width:1100px) { .form-layout { grid-template-columns:1fr; } }
         @media (max-width:900px) {
             .form-row, .form-row-3 { grid-template-columns:1fr; }
             .threat-grid { grid-template-columns:1fr; }
         }
-    
-        
 
-        
-        
+        /* ══════════════════════════════════════
+           MOBILE — hamburger + responsive layout
+           ══════════════════════════════════════ */
 
-        
-    /* ══════════════════════════════════════
-       MOBILE RESPONSIVE — single authority
-       ══════════════════════════════════════ */
-    .menu-toggle {
-        display: none;
-        position: fixed; top: 14px; left: 14px; z-index: 200;
-        width: 40px; height: 40px; border-radius: 9px;
-        background: var(--navy); border: none; cursor: pointer;
-        align-items: center; justify-content: center;
-        flex-direction: column; gap: 5px;
-    }
-    .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
-    .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
-
-    @media (max-width: 768px) {
-        /* Prevent horizontal page scroll without blocking children */
-        html, body { overflow-x: clip !important; }
-
-        /* Hamburger button */
-        .menu-toggle { display: flex !important; }
-        .sidebar-overlay.open { display: block !important; }
-
-        /* Sidebar: hidden off-screen, slides in on .open */
-        .sidebar {
-            position: fixed !important;
-            transform: translateX(-100%) !important;
-            transition: transform 0.25s ease !important;
-            z-index: 99 !important;
+        /* Hamburger button — hidden on desktop */
+        .menu-toggle {
+            display: none;
+            position: fixed; top: 14px; left: 14px; z-index: 200;
+            width: 40px; height: 40px; border-radius: 9px;
+            background: var(--navy); border: none; cursor: pointer;
+            align-items: center; justify-content: center;
+            flex-direction: column; gap: 5px;
         }
-        .sidebar.open { transform: translateX(0) !important; }
+        .menu-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:2px; }
 
-        /* Main content area: full width, room for hamburger */
-        .main {
-            margin-left: 0 !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 16px !important;
-            padding-top: 64px !important;
-            box-sizing: border-box !important;
-            /* NO overflow-x here — let children scroll */
+        /* Overlay — hidden until sidebar opens */
+        .sidebar-overlay {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.45); z-index: 98;
         }
 
-        /* Step progress bar: scroll horizontally */
-        .step-progress, .progress-bar {
-            overflow-x: auto !important;
-            overflow-y: visible !important;
-            -webkit-overflow-scrolling: touch !important;
-            padding: 14px 16px !important;
-            flex-wrap: nowrap !important;
-            display: flex !important;
-        }
-        .step-item {
-            flex: 0 0 auto !important;
-            flex-shrink: 0 !important;
-            min-width: 120px !important;
-        }
-        .step-connector, .step-line {
-            flex-shrink: 0 !important;
-            min-width: 24px !important;
-        }
+        @media (max-width: 768px) {
+            /* Page scroll: clip overflow without creating scroll container */
+            html, body { overflow-x: clip; }
 
-        /* Threat grid: single column */
-        .threat-grid { grid-template-columns: 1fr !important; }
+            /* Show hamburger */
+            .menu-toggle { display: flex !important; }
 
-        /* Threat cards: force text to wrap, never overflow */
-        .threat-checkbox-card {
-            width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            overflow: visible !important;
-            white-space: normal !important;
-        }
-        .threat-card-body {
-            min-width: 0 !important;
-            flex: 1 !important;
-            overflow: visible !important;
-            white-space: normal !important;
-            word-break: break-word !important;
-        }
-        .threat-name, .threat-desc {
-            white-space: normal !important;
-            word-break: break-word !important;
-            overflow-wrap: break-word !important;
-        }
+            /* Show overlay when open */
+            .sidebar-overlay.open { display: block !important; }
 
-        /* Threat card text visible */
-        .threat-card-body {
-            overflow: visible !important;
-            word-break: break-word !important;
+            /* Sidebar: off-screen, slides in */
+            .sidebar {
+                position: fixed !important;
+                transform: translateX(-100%) !important;
+                transition: transform 0.25s ease !important;
+                z-index: 99 !important;
+            }
+            .sidebar.open { transform: translateX(0) !important; }
+
+            /* Main: full width, padded below hamburger */
+            .main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 16px !important;
+                padding-top: 64px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Progress bar: horizontal scroll */
+            .step-progress {
+                padding: 14px 12px !important;
+                flex-wrap: nowrap !important;
+            }
+            .step-item {
+                flex: 0 0 auto !important;
+                min-width: 110px !important;
+            }
+            .step-connector { flex-shrink: 0 !important; min-width: 20px !important; }
+
+            /* Threat grid: single column */
+            .threat-grid { grid-template-columns: 1fr !important; }
+
+            /* Threat cards: full width, text wraps */
+            .threat-checkbox-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+            }
+
+            /* Threat body: fills available space, wraps text */
+            .threat-card-body {
+                flex: 1 !important;
+                min-width: 0 !important;
+                /* NO width:0 — that would collapse the text */
+                overflow: visible !important;
+                white-space: normal !important;
+                word-break: break-word !important;
+            }
+
+            .threat-name, .threat-desc {
+                white-space: normal !important;
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+
+            /* Form card: don't clip children */
+            .form-card { overflow: visible !important; }
+
+            /* Grids collapse */
+            .form-layout { grid-template-columns: 1fr !important; }
+            .form-row, .form-row-3 { grid-template-columns: 1fr !important; }
+            .form-body { padding: 16px !important; }
+            .form-card-head { padding: 16px !important; }
+            .form-actions { padding: 14px 16px !important; }
+
+            /* Inputs full width */
+            input, select, textarea {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Buttons stack */
+            .form-actions {
+                flex-direction: column !important;
+                gap: 10px !important;
+                align-items: stretch !important;
+            }
+            .btn-back, .btn-next {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            /* Hide desktop info panel */
+            .info-card, .info-panel { display: none !important; }
+
+            /* Smaller title */
+            .page-title { font-size: 18px !important; }
         }
-        .threat-checkbox-card { overflow: visible !important; }
-        .form-card { overflow: visible !important; }
-
-        /* Tables: scrollable */
-        .risk-table-wrap, .table-wrap {
-            overflow-x: auto !important;
-            overflow-y: visible !important;
-            -webkit-overflow-scrolling: touch !important;
-            width: 100% !important;
-        }
-        table {
-            display: table !important;
-            min-width: 600px !important;
-            width: 100% !important;
-        }
-
-        /* Grids collapse */
-        .form-layout { grid-template-columns: 1fr !important; }
-        .form-row, .form-row-3 { grid-template-columns: 1fr !important; }
-        .mit-card-body { grid-template-columns: 1fr !important; }
-        .layout, .grid-2, .grid-3, .form-grid { grid-template-columns: 1fr !important; }
-        .summary-card { gap: 16px !important; }
-
-        /* Inputs full width */
-        input, select, textarea {
-            width: 100% !important;
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-        }
-
-        /* Buttons stack */
-        .form-actions, .nav-btn-row, .submit-row {
-            flex-direction: column !important;
-            gap: 10px !important;
-            align-items: stretch !important;
-        }
-        .btn-back, .btn-next, .btn-submit, .btn-primary {
-            width: 100% !important;
-            box-sizing: border-box !important;
-            text-align: center !important;
-            justify-content: center !important;
-        }
-
-        /* Hide desktop-only side panels */
-        .info-card, .info-panel { display: none !important; }
-
-        /* Font size adjustments */
-        .page-title, .page-header h1 { font-size: 18px !important; }
-    }
-</style>
-
+    </style>
 </head>
 <body>
-
-
-
 
 <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
 </button>
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-row">
@@ -616,7 +437,6 @@
             </div>
         </div>
     </div>
-
     <nav class="sidebar-nav">
         <a href="{{ route('dashboard') }}" class="nav-item">
             <span class="nav-icon">⊞</span> Dashboard
@@ -638,7 +458,6 @@
         </a>
         @endif
     </nav>
-
     <div class="sidebar-footer">
         <div class="user-row">
             <div class="user-avatar">{{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}</div>
@@ -656,14 +475,12 @@
 
 <main class="main">
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <a href="{{ url('/dashboard') }}">Dashboard</a>
-        <span class="breadcrumb-sep">›</span>
+        <span style="color:#e2e8f0;">›</span>
         <span>New Assessment</span>
     </div>
 
-    <!-- Page header -->
     <div class="page-header">
         <div class="page-title">New Risk Assessment</div>
         <div class="page-subtitle">
@@ -715,13 +532,11 @@
         </div>
     </div>
 
-    <!-- Form layout -->
     <form method="POST" action="{{ route('assessments.store') }}">
         @csrf
-
         <div class="form-layout">
 
-            <!-- ══ Form card ══ -->
+            <!-- Form card -->
             <div>
                 <div class="form-card">
                     <div class="form-card-head">
@@ -734,132 +549,112 @@
 
                     <div class="form-body">
 
-                        <!-- Step 1: Assessment Context -->
+                        <!-- Step 1 -->
                         <div class="form-section">
                             <div class="form-section-title">
                                 Assessment Context
                                 <span class="form-section-badge">Step 1 — Risk Measurement Criteria</span>
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>University / Institution Name <span class="req">*</span></label>
-                                    <input type="text" name="university_name"
-                                        placeholder="e.g. Universiti Teknologi Malaysia"
-                                        value="{{ old('university_name') }}" required>
+                                    <input type="text" name="university_name" placeholder="e.g. Universiti Teknologi Malaysia" value="{{ old('university_name') }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Assessment Date <span class="req">*</span></label>
-                                    <input type="date" name="assessment_date"
-                                        value="{{ old('assessment_date', now()->format('Y-m-d')) }}" required>
+                                    <input type="date" name="assessment_date" value="{{ old('assessment_date', now()->format('Y-m-d')) }}" required>
                                 </div>
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>Assessor Name <span class="req">*</span></label>
-                                    <input type="text" name="assessor_name"
-                                        placeholder="Full name of the risk assessor"
-                                        value="{{ old('assessor_name', auth()->user()->name ?? '') }}" required>
+                                    <input type="text" name="assessor_name" placeholder="Full name of the risk assessor" value="{{ old('assessor_name', auth()->user()->name ?? '') }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Assessor Role / Title</label>
-                                    <input type="text" name="assessor_role"
-                                        placeholder="e.g. ICT Director, Cloud Administrator"
-                                        value="{{ old('assessor_role') }}">
+                                    <input type="text" name="assessor_role" placeholder="e.g. ICT Director, Cloud Administrator" value="{{ old('assessor_role') }}">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>Risk Measurement Criteria — Institutional Impact Definition</label>
                                 <select name="impact_criteria">
-                                    <option value="standard" {{ old('impact_criteria') === 'standard' ? 'selected' : '' }}>
-                                        Standard (NIST SP 800-30 Rev.1 — 1=Very Low to 5=Very High)
-                                    </option>
+                                    <option value="standard" {{ old('impact_criteria') === 'standard' ? 'selected' : '' }}>Standard (NIST SP 800-30 Rev.1 — 1=Very Low to 5=Very High)</option>
                                 </select>
                                 <div class="field-hint">OCTAVE Allegro Step 1 — the scoring scale used to evaluate impact across all risk scenarios in this assessment.</div>
                             </div>
                         </div>
 
-                        <!-- Step 2: Asset Profile -->
+                        <!-- Step 2 -->
                         <div class="form-section">
                             <div class="form-section-title">
                                 Information Asset Profile
                                 <span class="form-section-badge">Step 2 — Asset Profile</span>
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>Cloud System / Asset Name <span class="req">*</span></label>
-                                    <input type="text" name="cloud_system_name"
-                                        placeholder="e.g. Blackboard LMS, Student Information System"
-                                        value="{{ old('cloud_system_name') }}" required>
+                                    <input type="text" name="cloud_system_name" placeholder="e.g. Blackboard LMS, Student Information System" value="{{ old('cloud_system_name') }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Asset Category <span class="req">*</span></label>
                                     <select name="asset_category" required>
                                         <option value="">Select category…</option>
-                                        <option value="lms" {{ old('asset_category') === 'lms' ? 'selected' : '' }}>Learning Management System (LMS)</option>
-                                        <option value="sis" {{ old('asset_category') === 'sis' ? 'selected' : '' }}>Student Information System (SIS)</option>
-                                        <option value="email" {{ old('asset_category') === 'email' ? 'selected' : '' }}>Email &amp; Collaboration Platform</option>
-                                        <option value="storage" {{ old('asset_category') === 'storage' ? 'selected' : '' }}>Cloud Storage / Repository</option>
-                                        <option value="research" {{ old('asset_category') === 'research' ? 'selected' : '' }}>Research Data Platform</option>
-                                        <option value="erp" {{ old('asset_category') === 'erp' ? 'selected' : '' }}>ERP / Administrative System</option>
-                                        <option value="auth" {{ old('asset_category') === 'auth' ? 'selected' : '' }}>Authentication / Identity System</option>
-                                        <option value="api" {{ old('asset_category') === 'api' ? 'selected' : '' }}>API / Integration Layer</option>
-                                        <option value="other" {{ old('asset_category') === 'other' ? 'selected' : '' }}>Other</option>
+                                        <option value="lms"      {{ old('asset_category')==='lms'      ?'selected':'' }}>Learning Management System (LMS)</option>
+                                        <option value="sis"      {{ old('asset_category')==='sis'      ?'selected':'' }}>Student Information System (SIS)</option>
+                                        <option value="email"    {{ old('asset_category')==='email'    ?'selected':'' }}>Email &amp; Collaboration Platform</option>
+                                        <option value="storage"  {{ old('asset_category')==='storage'  ?'selected':'' }}>Cloud Storage / Repository</option>
+                                        <option value="research" {{ old('asset_category')==='research' ?'selected':'' }}>Research Data Platform</option>
+                                        <option value="erp"      {{ old('asset_category')==='erp'      ?'selected':'' }}>ERP / Administrative System</option>
+                                        <option value="auth"     {{ old('asset_category')==='auth'     ?'selected':'' }}>Authentication / Identity System</option>
+                                        <option value="api"      {{ old('asset_category')==='api'      ?'selected':'' }}>API / Integration Layer</option>
+                                        <option value="other"    {{ old('asset_category')==='other'    ?'selected':'' }}>Other</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-group" style="margin-bottom:16px;">
                                 <label>Asset Description</label>
                                 <textarea name="asset_description" placeholder="Describe this cloud asset — its purpose, the data it holds, and who uses it…">{{ old('asset_description') }}</textarea>
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>Cloud Service Model</label>
                                     <select name="cloud_service_model">
                                         <option value="">Select…</option>
-                                        <option value="saas" {{ old('cloud_service_model') === 'saas' ? 'selected' : '' }}>SaaS — Software as a Service</option>
-                                        <option value="paas" {{ old('cloud_service_model') === 'paas' ? 'selected' : '' }}>PaaS — Platform as a Service</option>
-                                        <option value="iaas" {{ old('cloud_service_model') === 'iaas' ? 'selected' : '' }}>IaaS — Infrastructure as a Service</option>
+                                        <option value="saas" {{ old('cloud_service_model')==='saas'?'selected':'' }}>SaaS — Software as a Service</option>
+                                        <option value="paas" {{ old('cloud_service_model')==='paas'?'selected':'' }}>PaaS — Platform as a Service</option>
+                                        <option value="iaas" {{ old('cloud_service_model')==='iaas'?'selected':'' }}>IaaS — Infrastructure as a Service</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Cloud Deployment Model</label>
                                     <select name="cloud_deployment_model">
                                         <option value="">Select…</option>
-                                        <option value="public"  {{ old('cloud_deployment_model') === 'public'  ? 'selected' : '' }}>Public Cloud</option>
-                                        <option value="private" {{ old('cloud_deployment_model') === 'private' ? 'selected' : '' }}>Private Cloud</option>
-                                        <option value="hybrid"  {{ old('cloud_deployment_model') === 'hybrid'  ? 'selected' : '' }}>Hybrid Cloud</option>
-                                        <option value="community" {{ old('cloud_deployment_model') === 'community' ? 'selected' : '' }}>Community Cloud</option>
+                                        <option value="public"     {{ old('cloud_deployment_model')==='public'    ?'selected':'' }}>Public Cloud</option>
+                                        <option value="private"    {{ old('cloud_deployment_model')==='private'   ?'selected':'' }}>Private Cloud</option>
+                                        <option value="hybrid"     {{ old('cloud_deployment_model')==='hybrid'    ?'selected':'' }}>Hybrid Cloud</option>
+                                        <option value="community"  {{ old('cloud_deployment_model')==='community' ?'selected':'' }}>Community Cloud</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Primary Custodian</label>
-                                    <input type="text" name="primary_custodian"
-                                        placeholder="e.g. ICT Department, Cloud Administrator"
-                                        value="{{ old('primary_custodian') }}">
+                                    <input type="text" name="primary_custodian" placeholder="e.g. ICT Department, Cloud Administrator" value="{{ old('primary_custodian') }}">
                                     <div class="field-hint">The role responsible for day-to-day management of this asset.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Data Sensitivity Classification</label>
                                     <select name="sensitivity_classification">
                                         <option value="">Select…</option>
-                                        <option value="confidential" {{ old('sensitivity_classification') === 'confidential' ? 'selected' : '' }}>Confidential — Restricted access</option>
-                                        <option value="internal"     {{ old('sensitivity_classification') === 'internal'     ? 'selected' : '' }}>Internal — Staff &amp; students only</option>
-                                        <option value="public"       {{ old('sensitivity_classification') === 'public'       ? 'selected' : '' }}>Public — Open access</option>
+                                        <option value="confidential" {{ old('sensitivity_classification')==='confidential'?'selected':'' }}>Confidential — Restricted access</option>
+                                        <option value="internal"     {{ old('sensitivity_classification')==='internal'    ?'selected':'' }}>Internal — Staff &amp; students only</option>
+                                        <option value="public"       {{ old('sensitivity_classification')==='public'      ?'selected':'' }}>Public — Open access</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 3: Containers -->
+                        <!-- Step 3 -->
                         <div class="form-section">
                             <div class="form-section-title">
                                 Asset Containers
@@ -868,65 +663,51 @@
                             <div class="field-hint" style="margin-bottom:14px;font-size:12px;">
                                 Containers are the systems, networks, and physical locations where this asset is stored, transmitted, or processed.
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>Technical Container</label>
-                                    <input type="text" name="tech_container"
-                                        placeholder="e.g. AWS S3 buckets, Azure AD, Google Workspace"
-                                        value="{{ old('tech_container') }}">
+                                    <input type="text" name="tech_container" placeholder="e.g. AWS S3 buckets, Azure AD, Google Workspace" value="{{ old('tech_container') }}">
                                     <div class="field-hint">Cloud services, servers, databases holding this asset.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Network Container</label>
-                                    <input type="text" name="network_container"
-                                        placeholder="e.g. University VPN, public internet, campus LAN"
-                                        value="{{ old('network_container') }}">
+                                    <input type="text" name="network_container" placeholder="e.g. University VPN, public internet, campus LAN" value="{{ old('network_container') }}">
                                     <div class="field-hint">Networks and pathways through which this asset travels.</div>
                                 </div>
                             </div>
-
                             <div class="form-row" style="margin-bottom:16px;">
                                 <div class="form-group">
                                     <label>Physical Container</label>
-                                    <input type="text" name="physical_container"
-                                        placeholder="e.g. Data centre in Singapore, provider's facility"
-                                        value="{{ old('physical_container') }}">
+                                    <input type="text" name="physical_container" placeholder="e.g. Data centre in Singapore, provider's facility" value="{{ old('physical_container') }}">
                                     <div class="field-hint">Physical locations where data resides.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Human / People Container</label>
-                                    <input type="text" name="human_container"
-                                        placeholder="e.g. Students, academic staff, third-party vendor"
-                                        value="{{ old('human_container') }}">
+                                    <input type="text" name="human_container" placeholder="e.g. Students, academic staff, third-party vendor" value="{{ old('human_container') }}">
                                     <div class="field-hint">People who store, access, or process this asset.</div>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>CIA Triad — Primary Security Requirements</label>
                                 <div class="cia-row">
                                     <label class="cia-btn cia-c">
                                         <input type="checkbox" name="cia_confidentiality" value="1" {{ old('cia_confidentiality') ? 'checked' : '' }}>
-                                        <div class="cia-dot"></div>
-                                        Confidentiality
+                                        <div class="cia-dot"></div> Confidentiality
                                     </label>
                                     <label class="cia-btn cia-i">
                                         <input type="checkbox" name="cia_integrity" value="1" {{ old('cia_integrity') ? 'checked' : '' }}>
-                                        <div class="cia-dot"></div>
-                                        Integrity
+                                        <div class="cia-dot"></div> Integrity
                                     </label>
                                     <label class="cia-btn cia-a">
                                         <input type="checkbox" name="cia_availability" value="1" {{ old('cia_availability') ? 'checked' : '' }}>
-                                        <div class="cia-dot"></div>
-                                        Availability
+                                        <div class="cia-dot"></div> Availability
                                     </label>
                                 </div>
                                 <div class="field-hint">Select the CIA dimensions most critical to this asset's security.</div>
                             </div>
                         </div>
 
-                        <!-- Step 4–5: Threat Scenarios -->
+                        <!-- Steps 4–5: Threat Scenarios -->
                         <div class="form-section">
                             <div class="form-section-title">
                                 Pre-loaded Threat Scenario Library
@@ -1129,7 +910,7 @@
                             </div><!-- /threat-grid -->
                         </div>
 
-                        <!-- Additional notes -->
+                        <!-- Notes -->
                         <div class="form-section">
                             <div class="form-section-title">Assessment Notes</div>
                             <div class="form-group">
@@ -1142,112 +923,49 @@
 
                     <div class="form-actions">
                         <a href="{{ url('/dashboard') }}" class="btn-back">← Back to Dashboard</a>
-                        <button type="submit" class="btn-next">
-                            Save &amp; Continue to Threat Scoring →
-                        </button>
+                        <button type="submit" class="btn-next">Save &amp; Continue to Threat Scoring →</button>
                     </div>
                 </div>
             </div>
 
-            <!-- ══ Info panel ══ -->
+            <!-- Info panel (desktop only) -->
             <div class="info-panel">
-
                 <div class="info-card">
                     <div class="info-card-title">OCTAVE Allegro — This Step</div>
-                    <div class="octave-step">
-                        <div class="octave-num now">1</div>
-                        <div>
-                            <div class="octave-text">Risk measurement criteria</div>
-                            <div class="octave-sub">Define institutional impact levels</div>
-                        </div>
-                    </div>
-                    <div class="octave-step">
-                        <div class="octave-num now">2</div>
-                        <div>
-                            <div class="octave-text">Information asset profile</div>
-                            <div class="octave-sub">Name, category, custodian, classification</div>
-                        </div>
-                    </div>
-                    <div class="octave-step">
-                        <div class="octave-num now">3</div>
-                        <div>
-                            <div class="octave-text">Asset containers</div>
-                            <div class="octave-sub">Technical, network, physical, human</div>
-                        </div>
-                    </div>
-                    <div class="octave-step">
-                        <div class="octave-num">4</div>
-                        <div>
-                            <div class="octave-text">Areas of concern</div>
-                            <div class="octave-sub">Select applicable threat scenarios</div>
-                        </div>
-                    </div>
-                    <div class="octave-step">
-                        <div class="octave-num">5–7</div>
-                        <div>
-                            <div class="octave-text">Risk scoring</div>
-                            <div class="octave-sub">Likelihood × Impact · Next step</div>
-                        </div>
-                    </div>
-                    <div class="octave-step">
-                        <div class="octave-num">8</div>
-                        <div>
-                            <div class="octave-text">Mitigation plan</div>
-                            <div class="octave-sub">ISO 27001 controls · Treatment</div>
-                        </div>
-                    </div>
+                    <div class="octave-step"><div class="octave-num now">1</div><div><div class="octave-text">Risk measurement criteria</div><div class="octave-sub">Define institutional impact levels</div></div></div>
+                    <div class="octave-step"><div class="octave-num now">2</div><div><div class="octave-text">Information asset profile</div><div class="octave-sub">Name, category, custodian, classification</div></div></div>
+                    <div class="octave-step"><div class="octave-num now">3</div><div><div class="octave-text">Asset containers</div><div class="octave-sub">Technical, network, physical, human</div></div></div>
+                    <div class="octave-step"><div class="octave-num">4</div><div><div class="octave-text">Areas of concern</div><div class="octave-sub">Select applicable threat scenarios</div></div></div>
+                    <div class="octave-step"><div class="octave-num">5–7</div><div><div class="octave-text">Risk scoring</div><div class="octave-sub">Likelihood × Impact · Next step</div></div></div>
+                    <div class="octave-step"><div class="octave-num">8</div><div><div class="octave-text">Mitigation plan</div><div class="octave-sub">ISO 27001 controls · Treatment</div></div></div>
                 </div>
-
                 <div class="info-card">
                     <div class="info-card-title">Severity Legend</div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#dc2626;">🔴 Critical · Score 20–25</div>
-                        <div class="info-text">Immediate action required. Very High likelihood × Very High impact.</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#d97706;">🟠 High · Score 12–19</div>
-                        <div class="info-text">Priority attention needed. Significant likelihood or impact.</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#ca8a04;">🟡 Medium · Score 6–11</div>
-                        <div class="info-text">Plan mitigation. Moderate likelihood and impact combination.</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#059669;">🟢 Low · Score 1–5</div>
-                        <div class="info-text">Monitor and review. Risk within acceptable tolerance.</div>
-                    </div>
+                    <div class="info-item"><div class="info-label" style="color:#dc2626;">🔴 Critical · Score 20–25</div><div class="info-text">Immediate action required. Very High likelihood × Very High impact.</div></div>
+                    <div class="info-item"><div class="info-label" style="color:#d97706;">🟠 High · Score 12–19</div><div class="info-text">Priority attention needed. Significant likelihood or impact.</div></div>
+                    <div class="info-item"><div class="info-label" style="color:#ca8a04;">🟡 Medium · Score 6–11</div><div class="info-text">Plan mitigation. Moderate likelihood and impact combination.</div></div>
+                    <div class="info-item"><div class="info-label" style="color:#059669;">🟢 Low · Score 1–5</div><div class="info-text">Monitor and review. Risk within acceptable tolerance.</div></div>
                 </div>
-
                 <div class="tip-box">
                     💡 <strong>Tip:</strong> Select all threats that <em>could</em> apply to this asset. In the next step
                     (Module 2) you will assign a specific Likelihood score (1–5) to each selected threat,
                     and the system will calculate Risk Score = Likelihood × Impact automatically.
                 </div>
-
                 <div class="info-card">
                     <div class="info-card-title">CIA Triad Reference</div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#7c3aed;">C — Confidentiality</div>
-                        <div class="info-text">Protecting information from unauthorised disclosure — student data, research records, credentials.</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#0d9488;">I — Integrity</div>
-                        <div class="info-text">Ensuring data accuracy and completeness — preventing unauthorised modification of grades, records.</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label" style="color:#d97706;">A — Availability</div>
-                        <div class="info-text">Guaranteeing system access when needed — during enrolment, examination periods, and daily teaching.</div>
-                    </div>
+                    <div class="info-item"><div class="info-label" style="color:#7c3aed;">C — Confidentiality</div><div class="info-text">Protecting information from unauthorised disclosure — student data, research records, credentials.</div></div>
+                    <div class="info-item"><div class="info-label" style="color:#0d9488;">I — Integrity</div><div class="info-text">Ensuring data accuracy and completeness — preventing unauthorised modification of grades, records.</div></div>
+                    <div class="info-item"><div class="info-label" style="color:#d97706;">A — Availability</div><div class="info-text">Guaranteeing system access when needed — during enrolment, examination periods, and daily teaching.</div></div>
                 </div>
+            </div>
 
-            </div><!-- /info-panel -->
         </div><!-- /form-layout -->
     </form>
 
 </main>
 
 <script>
-function toggleSidebar(){
+function toggleSidebar() {
     var s = document.querySelector('.sidebar');
     var o = document.getElementById('overlay');
     s.classList.toggle('open');
