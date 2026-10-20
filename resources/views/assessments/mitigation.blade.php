@@ -373,6 +373,51 @@
         /* Font size adjustments */
         .page-title, .page-header h1 { font-size: 18px !important; }
     }
+
+
+    /* Targeted mobile fixes for Risk Mitigation */
+    @media (max-width: 768px) {
+        .main, .content, .layout, .layout > *, .mitigation-card, .mit-card-body { min-width: 0 !important; }
+        .content { width: 100% !important; max-width: 100% !important; padding: 14px 12px 32px !important; }
+        .page-header { margin-bottom: 18px !important; }
+        .page-header h1 { font-size: 20px !important; line-height: 1.3 !important; overflow-wrap: anywhere; }
+        .page-header p { font-size: 13px !important; line-height: 1.55 !important; }
+        .summary-card { padding: 16px !important; gap: 12px 18px !important; align-items: flex-start !important; }
+        .summary-item { min-width: 0; flex: 1 1 120px; }
+        .layout { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
+        .section-head { align-items: flex-start !important; gap: 8px !important; flex-wrap: wrap !important; }
+        .section-head > * { min-width: 0; }
+        .risk-table-wrap { width: 100% !important; max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; -webkit-overflow-scrolling: touch !important; }
+        .risk-table-wrap table { min-width: 640px !important; width: 640px !important; }
+        .mitigation-card { border-radius: 10px !important; margin-bottom: 14px !important; }
+        .mit-card-head { padding: 13px !important; gap: 10px !important; align-items: flex-start !important; }
+        .mit-card-head-left { min-width: 0 !important; gap: 9px !important; align-items: flex-start !important; }
+        .mit-name { font-size: 13px !important; line-height: 1.45 !important; overflow-wrap: anywhere; }
+        .mit-meta { line-height: 1.5 !important; overflow-wrap: anywhere; }
+        .mit-score-box { flex: 0 0 48px !important; }
+        .mit-score-num { font-size: 20px !important; }
+        .mit-score-lbl { font-size: 8px !important; }
+        .mit-card-body { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 18px !important; padding: 14px !important; }
+        .mit-card-body > div, .treatment-wrap { min-width: 0 !important; }
+        .control-list li { align-items: flex-start !important; line-height: 1.5 !important; overflow-wrap: anywhere; }
+        .control-code { flex-shrink: 0 !important; }
+        .treatment-select, .notes-input, select, textarea { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; font-size: 14px !important; }
+        .treatment-select { white-space: normal !important; }
+        .submit-row { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 14px !important; padding: 14px !important; }
+        .submit-row > * { width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+        .submit-row > div { text-align: left !important; }
+        .btn-back, .btn-primary { width: 100% !important; justify-content: center !important; text-align: center !important; white-space: normal !important; }
+        input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { max-width: 100% !important; }
+        input[type="checkbox"], input[type="radio"] { width: 18px !important; height: 18px !important; max-width: 18px !important; flex: 0 0 18px !important; }
+    }
+    @media (max-width: 420px) {
+        .content { padding-left: 10px !important; padding-right: 10px !important; }
+        .mit-card-head { padding: 11px !important; gap: 8px !important; }
+        .mit-rank { width: 28px !important; height: 28px !important; }
+        .mit-score-box { flex-basis: 42px !important; }
+        .mit-card-body { padding: 12px !important; }
+    }
+
 </style>
 
 </head>

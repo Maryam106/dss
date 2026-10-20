@@ -543,27 +543,10 @@
 
         /* Threat card text visible */
         .threat-card-body {
-            display: block !important;
-            flex: 1 1 auto !important;
-            min-width: 0 !important;
-            width: auto !important;
-            max-width: 100% !important;
             overflow: visible !important;
-            white-space: normal !important;
-            overflow-wrap: anywhere !important;
-            word-break: normal !important;
-            writing-mode: horizontal-tb !important;
+            word-break: break-word !important;
         }
-        .threat-checkbox-card {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: flex-start !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-            writing-mode: horizontal-tb !important;
-            overflow: visible !important;
-        }
+        .threat-checkbox-card { overflow: visible !important; }
         .form-card { overflow: visible !important; }
 
         /* Tables: scrollable */
@@ -587,21 +570,10 @@
         .summary-card { gap: 16px !important; }
 
         /* Inputs full width */
-        input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+        input, select, textarea {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
-        }
-
-        /* Keep selection controls compact inside threat cards. */
-        .threat-checkbox-card > input[type="checkbox"] {
-            width: 18px !important;
-            min-width: 18px !important;
-            max-width: 18px !important;
-            height: 18px !important;
-            flex: 0 0 18px !important;
-            margin: 2px 0 0 !important;
-            padding: 0 !important;
         }
 
         /* Buttons stack */
@@ -623,6 +595,50 @@
         /* Font size adjustments */
         .page-title, .page-header h1 { font-size: 18px !important; }
     }
+
+
+    /* Targeted mobile fixes for Risk Scoring */
+    @media (max-width: 768px) {
+        .main, .content, .layout, .card, .card-body { min-width: 0 !important; }
+        .content { width: 100% !important; max-width: 100% !important; padding: 14px 12px 32px !important; }
+        .page-header { padding-left: 2px; margin-bottom: 18px !important; }
+        .page-header h1 { font-size: 20px !important; line-height: 1.3 !important; overflow-wrap: anywhere; }
+        .page-header p { font-size: 13px !important; line-height: 1.55 !important; }
+        .summary-card { padding: 16px !important; gap: 12px 18px !important; align-items: flex-start !important; }
+        .summary-item { min-width: 0; flex: 1 1 120px; }
+        .layout { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
+        .card { border-radius: 10px !important; }
+        .card-head { padding: 14px !important; gap: 10px !important; align-items: flex-start !important; }
+        .card-head h2 { font-size: 14px !important; line-height: 1.4 !important; }
+        .card-head p { line-height: 1.5 !important; overflow-wrap: anywhere; }
+        .card-body { padding: 12px !important; }
+        .risk-row { padding: 14px !important; margin-bottom: 12px !important; min-width: 0; }
+        .risk-top { gap: 10px !important; align-items: flex-start !important; }
+        .risk-info { min-width: 0 !important; overflow-wrap: anywhere; }
+        .risk-name { font-size: 14px !important; line-height: 1.4 !important; overflow-wrap: anywhere; }
+        .risk-desc { font-size: 12px !important; line-height: 1.55 !important; overflow-wrap: anywhere; word-break: normal !important; }
+        .risk-badges { gap: 5px !important; }
+        .badge { white-space: normal !important; line-height: 1.35 !important; }
+        .score-display { flex: 0 0 52px !important; }
+        .score-box { width: 52px !important; height: 52px !important; border-radius: 10px !important; }
+        .score-num { font-size: 20px !important; }
+        .score-lbl { font-size: 7px !important; }
+        .likelihood-header { display: flex !important; align-items: flex-start !important; gap: 8px !important; flex-wrap: wrap !important; }
+        .likelihood-header label { min-width: 0 !important; flex: 1 1 180px !important; line-height: 1.5 !important; }
+        .slider-wrap { width: 100% !important; min-width: 0 !important; }
+        input[type="range"] { width: 100% !important; max-width: 100% !important; }
+        input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { max-width: 100% !important; }
+        input[type="checkbox"], input[type="radio"] { width: 18px !important; height: 18px !important; max-width: 18px !important; flex: 0 0 18px !important; }
+        .form-actions, .nav-btn-row { gap: 10px !important; }
+    }
+    @media (max-width: 420px) {
+        .content { padding-left: 10px !important; padding-right: 10px !important; }
+        .risk-top { gap: 8px !important; }
+        .score-display { flex-basis: 46px !important; }
+        .score-box { width: 46px !important; height: 48px !important; }
+        .risk-row { padding: 11px !important; }
+    }
+
 </style>
 
 </head>
