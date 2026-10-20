@@ -207,7 +207,7 @@
         .mit-card-body { grid-template-columns: 1fr !important; }
 
         /* Inputs full width */
-        input, select, textarea { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+        input:not([type="checkbox"]):not([type="radio"]), select, textarea { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
 
         /* Action buttons stack */
         .form-actions, .nav-btn-row, [class*="btn-row"], [class*="nav-btn"], .submit-row {
@@ -224,7 +224,14 @@
             justify-content: center !important;
         }
 
-        /* Hide info sidebar panels on mobile */
+        /* Assessment list: keep actions usable without widening the page */
+        .actions { flex-wrap: wrap !important; gap: 6px !important; }
+        .actions .btn-sm { min-height: 34px; }
+        .actions form { margin: 0; }
+        .card { min-width: 0; }
+        .card > div[style*="overflow-x:auto"] { max-width: 100%; }
+
+        /* Hide optional info panels on mobile, if present */
         .info-card, .info-panel { display: none !important; }
     }
     </style>
@@ -356,7 +363,7 @@
 <script>
 function toggleSidebar(){
     var s = document.querySelector('.sidebar');
-    var o = document.getElementById('soverlay');
+    var o = document.getElementById('overlay');
     s.classList.toggle('open');
     o.classList.toggle('open');
 }

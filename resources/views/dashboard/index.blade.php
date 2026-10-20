@@ -455,7 +455,7 @@
     .menu-toggle span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
     .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 98; }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
         /* Prevent horizontal page scroll without blocking children */
         html, body { overflow-x: clip !important; }
         /* Hamburger button */
@@ -477,8 +477,9 @@
             width: 100% !important;
             max-width: 100% !important;
             padding: 16px !important;
-            padding-top: 64px !important;
+            padding-top: 72px !important;
             box-sizing: border-box !important;
+            min-width: 0 !important;
             /* NO overflow-x here — let children scroll */
         }
 
@@ -790,7 +791,7 @@
 <script>
 function toggleSidebar(){
     var s = document.querySelector('.sidebar');
-    var o = document.getElementById('soverlay');
+    var o = document.getElementById('overlay');
     s.classList.toggle('open');
     o.classList.toggle('open');
 }
