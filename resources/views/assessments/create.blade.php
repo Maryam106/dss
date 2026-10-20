@@ -375,8 +375,10 @@
             /* Threat body: fills available space, wraps text */
             .threat-card-body {
                 display: block !important;
+                flex: 1 1 auto !important;
                 min-width: 0 !important;
-                width: 100% !important;
+                width: auto !important;
+                max-width: 100% !important;
                 overflow: visible !important;
                 white-space: normal !important;
                 word-break: break-word !important;
@@ -400,10 +402,21 @@
             .form-actions { padding: 14px 16px !important; }
 
             /* Inputs full width */
-            input, select, textarea {
+            input:not([type="checkbox"]):not([type="radio"]), select, textarea {
                 width: 100% !important;
                 max-width: 100% !important;
                 box-sizing: border-box !important;
+            }
+
+            /* Keep selection controls compact inside threat cards. */
+            .threat-checkbox-card > input[type="checkbox"] {
+                width: 18px !important;
+                min-width: 18px !important;
+                max-width: 18px !important;
+                height: 18px !important;
+                flex: 0 0 18px !important;
+                margin: 2px 0 0 !important;
+                padding: 0 !important;
             }
 
             /* Buttons stack */
