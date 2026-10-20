@@ -324,6 +324,70 @@
     }
     </style>
 
+
+    <style>
+    /* Report page mobile layout overrides */
+    @media (max-width: 768px) {
+        body { display: block !important; width: 100%; }
+        .main { min-width: 0 !important; }
+        .topbar { padding: 12px 12px 12px 48px !important; gap: 6px; flex-wrap: wrap; font-size: 11px; overflow-wrap: anywhere; }
+        .content { padding: 16px 0 28px !important; width: 100%; min-width: 0; }
+        .progress-bar { padding: 14px !important; gap: 10px; overflow-x: auto; align-items: flex-start; }
+        .progress-bar .step-item { flex: 0 0 auto; min-width: 125px; }
+        .progress-bar .step-line { flex: 0 0 18px; margin: 16px 0 0; }
+        .step-label { margin-left: 7px; }
+        .step-label .s-name { font-size: 11px; }
+        .page-header { width: 100%; min-width: 0; }
+        .page-title { align-items: flex-start; line-height: 1.35; }
+        .page-subtitle { line-height: 1.5; overflow-wrap: anywhere; }
+        .header-actions { width: 100%; flex-wrap: wrap; }
+        .header-actions > * { flex: 1 1 100%; justify-content: center; }
+        .summary-strip { padding: 16px !important; gap: 16px; display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .s-item { min-width: 0; overflow-wrap: anywhere; }
+        .s-value { font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; word-break: normal; }
+        .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+        .stat-card { padding: 14px !important; min-width: 0; }
+        .stat-label { font-size: 10px; line-height: 1.4; }
+        .stat-value { font-size: 25px; }
+        .charts-row { grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
+        .chart-card { padding: 16px !important; min-width: 0; }
+        .chart-wrap { height: 230px !important; max-width: 100%; }
+        .section { min-width: 0; }
+        .section-header { padding: 14px !important; align-items: flex-start !important; gap: 8px; flex-wrap: wrap; }
+        .section-title { flex-wrap: wrap; line-height: 1.45; }
+        .section-header > div:last-child { max-width: 100%; line-height: 1.5; }
+        .risk-table { display: table !important; width: 850px !important; min-width: 850px !important; white-space: normal !important; }
+        .risk-table th, .risk-table td { padding: 10px 12px !important; }
+        .threat-name { min-width: 130px; overflow-wrap: anywhere; }
+        .cia-tags { flex-wrap: wrap; }
+        .mit-grid { display: block !important; }
+        .mit-row.header { display: none !important; }
+        .mit-row:not(.header) { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; gap: 0 !important; border: 1px solid var(--border); border-radius: 10px; margin: 12px; overflow: hidden; }
+        .mit-cell { min-width: 0; padding: 12px !important; overflow-wrap: anywhere; word-break: normal; }
+        .mit-cell:nth-child(1) { grid-column: 1 / -1; background: var(--surface); border-bottom: 1px solid var(--border); }
+        .mit-cell:nth-child(2) { border-bottom: 1px solid var(--border); }
+        .mit-cell:nth-child(3) { grid-column: 1 / -1; border-bottom: 1px solid var(--border); }
+        .mit-cell:nth-child(4) { grid-column: 1 / -1; }
+        .mit-notes { line-height: 1.55; overflow-wrap: anywhere; }
+        .compliance-grid { grid-template-columns: minmax(0, 1fr) !important; padding: 14px !important; }
+    }
+    @media (max-width: 420px) {
+        .main { padding-left: 12px !important; padding-right: 12px !important; }
+        .summary-strip { grid-template-columns: minmax(0, 1fr) !important; }
+        .stat-row { gap: 8px !important; }
+        .stat-card { padding: 12px !important; }
+        .stat-value { font-size: 23px; }
+        .progress-bar { margin-left: 0; margin-right: 0; }
+        .section-badge { font-size: 10px; }
+    }
+    @media print {
+        .menu-toggle, .sidebar-overlay { display: none !important; }
+        .main { padding: 0 !important; }
+        .risk-table { width: 100% !important; min-width: 0 !important; }
+        .mit-row:not(.header) { break-inside: avoid; }
+    }
+    </style>
+
 </head>
 <body>
 
@@ -773,7 +837,7 @@ new Chart(document.getElementById('scoreChart'), {
 <script>
 function toggleSidebar(){
     var s = document.querySelector('.sidebar');
-    var o = document.getElementById('soverlay');
+    var o = document.getElementById('overlay');
     s.classList.toggle('open');
     o.classList.toggle('open');
 }
