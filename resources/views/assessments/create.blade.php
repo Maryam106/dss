@@ -222,13 +222,11 @@
 
         /* CRITICAL: card body must flex:1 with min-width:0 — NO width:0 */
         .threat-card-body {
-            flex: 1 1 auto;
             min-width: 0;
             overflow: visible;
             white-space: normal;
             word-break: break-word;
             writing-mode: horizontal-tb;
-            width: 100%;
         }
         .threat-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; white-space:normal; word-break:break-word; }
         .threat-desc { font-size:12px; color:var(--muted); line-height:1.5; white-space:normal; word-break:break-word; }
@@ -376,14 +374,13 @@
 
             /* Threat body: fills available space, wraps text */
             .threat-card-body {
-                flex: 1 1 auto !important;
+                display: block !important;
                 min-width: 0 !important;
-                /* NO width:0 — that would collapse the text */
+                width: 100% !important;
                 overflow: visible !important;
                 white-space: normal !important;
                 word-break: break-word !important;
                 writing-mode: horizontal-tb !important;
-                width: 100% !important;
             }
 
             .threat-name, .threat-desc {

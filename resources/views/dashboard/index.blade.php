@@ -166,7 +166,7 @@
         .main {
         margin-left: 232px;
         flex: 1;
-        padding: 36px 40px;
+    padding: 36px 40px;
         }
 
         /* ── Topbar ── */
